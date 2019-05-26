@@ -386,6 +386,7 @@ header .top button{
 text-decoration: none;
 color: #02554d;
 font-weight: bold;
+cursor: pointer;
 }
 
 /** End Settings Page**/
