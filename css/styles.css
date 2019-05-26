@@ -1,0 +1,393 @@
+@charset "UTF-8";
+
+*:focus{
+    outline: none;
+}
+html,body{
+    width:100%;
+    height:100%;
+    overflow:auto;
+}
+body{
+    font-family: 'Sofadi+one', roboto;
+    font-weight:500;
+}
+
+body{
+    background: #dedede;
+}
+
+
+/**header: logoname, TaskOption, SettingsButton**/
+header{
+    width: 100%;
+    background: #009688;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+    top: 0px;
+    position: fixed;
+    z-index: 1;
+}
+header .top{
+    width:100%;
+    height: 50px;
+    float: left;
+    color:white;
+    text-align: center;
+    position:relative;
+    z-index: 10;
+}
+header .top h1{
+    float:left;
+    color:white;
+    margin: 10px;
+    text-align: left;
+    font-size: 25px;
+}
+header .top button{
+    width: 50px;
+    height: 50px;
+    float:left;
+    border:0px;
+    background-color:#009688;
+    color:white;
+    text-align:center;
+    font-size: 25px;
+}
+
+.taskoptioncontent,
+.taskoption{
+    top:13px;
+    right:50px;
+    position:absolute;
+    border:0;
+    text-align:left;
+    color:white;
+    width:90px;
+}
+.taskoptioncontent{
+    top:10px;
+    width:100px;
+    border:0;
+    display:none;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    z-index:2;
+
+}
+
+/**Transparent fullscreen modal for taskcontent, settingspagebutton**/
+.modal{
+    display:none;
+    width:100%;
+    height:100%;
+    background-color:transparent;
+    position:fixed;
+    z-index:2;
+}
+.taskoptioncontent button{
+    display:block;
+    width:100%;
+    padding:10px;
+    border:0 solid teal;
+    text-align:left;
+    text-decoration: none;
+    background-color:teal;
+    color:white;
+}
+
+.settingsbutton{
+    top:0;
+    right:0px;
+    position:absolute; 
+}
+.settingspagebutton{
+    display:none;
+    top:10px;
+    right:10px;
+    text-align:left;
+    position:absolute; 
+    z-index:2;
+    border:0;
+    background-color:white;
+    font-size:20px;
+}
+.settingspagebutton a{
+    color:black;
+    text-decoration:none;
+}
+/**End of Header**/
+
+/**General shared css**/
+.pagecontainer{
+    padding:10px;
+    margin-top:50px;
+    width:100%;
+    height:100%;
+}
+/** End General shared css**/
+
+/**Todo page**/
+.todopage{
+    position:relative;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+}
+.completedpagecontent:empty:before,
+.todopage .pagecontainer:empty:before{
+    content:"Add task";
+    display:block;
+    text-align:center;
+    font-weight: bold;
+}
+/**todo page item**/
+.completedpagecontent,
+.todopage .todopagecontent{
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+.completedpagecontent ul, 
+.todopage .todopagecontent div ul{
+    width: 100%;
+    float:left;
+}
+.completedpagecontent ul li,
+.todopage .todopagecontent div ul li{
+    width: 100%;
+    min-height: 50px;
+    padding: 10px 100px 20px 10px;
+    background-color: white;
+    border: 0;
+    border-radius: 5px;
+    float: left;
+    position: relative; 
+}
+.completedpagecontent ul li .buttons,
+.todopage .todopagecontent div ul li .buttons{
+    width: 100px;
+    height:50px;
+    background-color: inherit;
+    position: absolute;
+    border:0;
+    border-radius: 5px;
+    top:0;
+    right: 0;
+    /* z-index: 1; */
+}
+.completedpagecontent ul li .buttons button,
+.todopage .todopagecontent div ul li .buttons button{
+    width: 50px;
+    height: 50px;
+    float:left;
+    background: white;
+    box-shadow: none;
+    border: 0;
+    color:teal;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+}
+.completedpagecontent ul li .buttons button:last-of-type:before,
+.todopage .todopagecontent div ul li .buttons button:last-of-type:before{
+    content:"";
+    width:1px;
+    height: 30px;
+    background-color: grey;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+.completedpagecontent ul li:after,
+.todopage .todopagecontent div ul li:after{
+    content:"";
+    float:right;
+    background-color: grey;
+    position: absolute;
+    width: 98%;
+    height: 1px;
+    bottom: 0;
+    left:4px;
+    /* z-index: 2; */
+}
+.completedpagecontent ul li:last-of-type:after,
+.todopage .todopagecontent div ul li:last-of-type:after{
+    content:"";
+    background-color: white;
+}
+.completedpagecontent ul li span.itemvalue,
+.todopage .todopagecontent div ul li span.itemvalue{
+    padding-right: 50%;
+    width: 100%;
+}
+.completedpagecontent ul li span.itemtime,
+.todopage .todopagecontent div ul li span.itemtime{
+    position: absolute;
+    left:80px;
+    bottom:2px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.completedpagecontent ul li span.itemdate,
+.todopage .todopagecontent div ul li span.itemdate{
+    position: absolute;
+    left:10px;
+    bottom:2px;
+    font-size: 12px;
+    font-weight: 500;
+}
+.red{
+    color:red;
+}
+.teal{
+    color:teal;
+}
+
+.todopage .todopagecontent div p.overdue{
+    margin-bottom:5px;
+    font-weight: 500;
+}
+.todopage .todopagecontent div p.today{
+    margin-top: 80px;
+}
+
+/**End todo page item**/
+
+
+/**Todo Page Quick Input**/
+.quickinput{
+    position:fixed;
+    bottom:0px;
+    width:100%;
+    float:left;
+    padding:5px;
+    background-color:#009688;
+    z-index:2;
+}
+.quickinput input[type="text"]{
+    width:100%;
+    padding:8px 0 2px 0;
+    border:0;
+    border-bottom: 1.5px solid white;
+    color:white;
+    float:left;
+    background-color:#009688;
+    text-indent: 10px;
+    font-size:18px;
+}
+
+.quickinput input::-webkit-input-placeholder{
+    color:white;
+}
+.quickinput input:moz-placeholder{
+    color:white;
+}
+.quickinput input::moz-placeholder{
+    color:white;
+}
+.quickinput input::-ms-input-placeholder{
+    color:white;
+}
+.quickinput input::placeholder{
+    color:white;
+}
+
+.quicksubmit{
+    display:none;
+    border:0;
+    padding:5px 12px 0 12px;
+    font-size:25px;
+    color:white;
+    background-color:#009688;
+}/**End of quick task**/
+/**Add task button**/
+.addtaskbutton{
+    position: fixed;
+    bottom:50px;
+    right:10px;
+    z-index:2;
+}
+.addtaskbutton button{
+    width:50px;
+    height:50px;
+    border:0;
+    border-radius:50%;
+    background-color:#009688;
+    color:white;
+}/**End of Add Task button**/
+/**End of todo page**/
+
+/**Completed page **/
+.completedpage{
+    display:none;
+    width:100%;
+    height:100%;
+}
+
+.completedpage .pagecontainer:empty:before{
+    content:"No completed task";
+}
+/**New Task Page**/
+.newtaskpage{
+    display:none;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background-color:whitesmoke; 
+}
+
+/*.newtaskpage*/
+.newtaskpagecontent input{
+    width:100%;
+    padding:8px 0 2px 0;
+    border:0;
+    border-bottom: 1.5px solid #009688;
+    color:black;
+    float:left;
+    background-color:inherit;
+    text-indent: 10px;
+    font-size:18px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+/*.newtaskpage*/
+.newtaskpagecontent p{
+    color:#009688;
+}
+
+/*.newtaskpage */
+.newtaskpagecontent div.newinputbox input{
+    margin-bottom:10px;
+
+}
+/*.newtaskpage */
+.newtaskpagecontent input::-webkit-input-placeholder{
+
+    color:grey;
+}
+/*.newtaskpage */
+.newtaskpagecontent input:moz-placeholder{
+    color:grey;
+}
+/*.newtaskpage */
+.newtaskpagecontent input::moz-placeholder{
+    color:grey;
+}
+/*.newtaskpage */
+.newtaskpagecontent input::-ms-input-placeholder{
+    color:grey;
+}
+
+/** Settings Page**/
+.settingspage{
+    display:none;
+}
+
+.about a{
+text-decoration: none;
+color: #02554d;
+font-weight: bold;
+}
+
+/** End Settings Page**/
+
+/** Edit page **/

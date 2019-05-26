@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+
+<head>
+  <title>ScheDo</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+  <link rel="stylesheet" href="css/reset.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+
+<body>
+  <div class="modal" id="modal"></div>
+  <div class="mainpage pages" id="mainPage">
+    <!--Main page/ hompage-->
+    <Header>
+      <div class="top">
+        <h1 class="logoname">ScheDo</h1>
+        <button id="settingsButton" class="settingsbutton"><i class="fa fa-ellipsis-v"></i></button>
+        <div class="taskoption" id="taskOption">
+          <span id="taskType">Todo</span>
+          <span style="float:right"><i class="fa fa-caret-down"></i></span>
+        </div>
+      </div>
+    </Header>
+    <div class="taskoptioncontent" id="taskOptionContent">
+      <button id="todoPageButton">Todo</button>
+      <button id="completedPageButton">Completed</button>
+    </div>
+    <button id="settingsPageButton" class="settingspagebutton">About</button>
+    <!--TodoPage (the mainpage/homepage)-->
+    <div class="todopage" id="todoPage">
+      <div id="todoPageContent" class="todopagecontent pagecontainer"></div>
+      <div class="addtaskbutton" id="addTaskButton">
+        <button><i class="fa fa-plus"></i></button>
+      </div>
+      <div class="quickinput">
+        <input type="text" id="quickInput" placeholder="Enter quick a task...">
+        <button id="quickSubmit" class="quicksubmit"><i class="fa fa-check"></i></button>
+      </div>
+    </div>
+    <!---- end TodoPage ---->
+    <div class="completedpage" id="completedPage">
+      <div id="completedPageContent" class="completedpagecontent pagecontainer"></div>
+    </div>
+    <!----CompletedPage (the mainpage/homepage)---->
+  </div>
+  <!--End of MainPage/HomePage-->
+  <div class="newtaskpage pages" id="newTaskPage">
+    <header>
+      <div class="top">
+        <button class="backbutton" id="backButton"><i class="fa fa-arrow-left"></i></button>
+        <h1>New Task</h1>
+        <button class="savebutton" id="saveButton" style="float:right"><i class="fa fa-check"></i></button>
+      </div>
+    </header>
+    <div id="newTaskPageContent" class="newtaskpagecontent pagecontainer">
+      <div class="newinputbox">
+        <p>what is to be done?</p>
+        <input id="inputValue" type="text" value="" placeholder="Enter Task Here">
+      </div>
+      <div class=dueDatebox>
+        <p>Due date</p>
+        <input id="newDate" type="date"><br>
+        <input id="newTime" type="time">
+      </div>
+    </div>
+  </div>
+  <!----NewTaskPage ---->
+  <div class="editpage pages" id="editPage">
+    <header>
+      <div class="top">
+        <button class="backbutton" id="Backbutton"><i class="fa fa-arrow-left"></i></button>
+        <h1>Edit</h1>
+        <div style="float:right">
+          <button id="submitEditButton"> <i class="fa fa-check"></i></button>
+          <button id="deleteEditButton" style="float: left"><i class="fa fa-trash"></i></button>
+        </div>
+      </div>
+    </header>
+    <div id="editTaskPageContent" class="newtaskpagecontent pagecontainer">
+      <div class="newinputbox">
+        <p>what is to be done?</p>
+        <input id="editValue" type="text" value="" placeholder="Enter Task Here">
+      </div>
+      <div class=dueDatebox>
+        <p>Due date</p>
+        <input id="editDate" type="date"><br>
+        <input id="editTime" type="time">
+      </div>
+    </div>
+  </div>
+  <!----EditPage ---->
+  <div class="settingspage pages" id="settingsPage">
+    <header>
+      <div class="top">
+        <button class="backbutton" id="backButton"><i class="fa fa-arrow-left"></i></button>
+        <h1>About</h1>
+      </div>
+    </header>
+    <div id="settingsPageContent" class="pagecontainer">
+      <div class="about">
+        <h4> I'm Adelaja Ibrahim Abiola,I am a versatile frontend engineer with a solid background in Computer Science.
+          I develop smooth applications with responsive User interfaces and awesome user experience. I build and
+          interpret mockups for both mobile and web applications. </h4>
+        <br />
+        <p style="padding: 6px; background-color: #ff1d1d; color: aliceblue"> Note: This App was created since 2017 and hasn't been maintained since then. It's online incase anyone
+          whats to pick one or two things, I'll be glad to help either. </p>
+          <br />
+          <p>
+            Follow me:
+          </p>
+          
+          <p>Portfolio: <a href="https://portfolio.adescode.com/" target="_blank">Adescode Portfolio</a></p>
+          <p>Twitter: <a href="https://twitter.com/adescode" target="_blank">Adescode</a></p>
+          <p>Github: <a href="https://github.com/adescode">Adescode</a></p>
+          <p>LinkedIn: <a href="https://linkedin.com/in/adescode/">Adescode</a></p>
+          <p>Instagram: <a href=" https://www.instagram.com/adescode_/">Adescode_</a></p>
+      </div>
+    </div>
+  </div>
+  <!----SettingsPage ---->
+  <script src="js/scripts.js"></script>
+</body>
+
+</html>
