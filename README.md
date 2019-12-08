@@ -1,10 +1,10 @@
 ## Schedo
 
-# A simple todo list app built in HTML, CSS and JavaScript.
+# A simple todo list app built with HTML, CSS and JavaScript.
 
-Going through my old system when i found this project, after two year or more.
+Going through my old system when i found this project, after two years or more.
 
-I remember i planned to write it all whole in javascript but i ended up adding some Jquery.
+I remember i planned to write it all whole in vanilla javascript but i ended up adding some Jquery.
 
 To understand the steps taken before i got to where the app is now,
 I'll reference [Max Sandelin](https://github.com/themaxsandelin/todo) Todo tutorial
